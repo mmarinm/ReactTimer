@@ -21,7 +21,7 @@ const Nav = () => {
         <div className="top-bar-right">
           <ul className="menu">
             <li className="menu-text">
-              Created by:<a href="https://github.com/mmarinm" target="_blank"> Marin Mestrovic</a>
+              Created by <a href="https://github.com/mmarinm" target="_blank">Marin Mestrovic</a>
             </li>
           </ul>
         </div>
