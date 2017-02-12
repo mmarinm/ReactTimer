@@ -8,7 +8,6 @@ const Main = (props) => {
       <Nav/>
       <div>
         <div>
-          <h2>Boilerplate rendered</h2>
           {props.children}
         </div>
       </div>
