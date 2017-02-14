@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {Clock} from 'Clock';
+import {CountdownForm} from "CountdownForm";
 
 export class Timer extends React.Component {
   constructor(props) {
@@ -30,7 +31,10 @@ export class Timer extends React.Component {
 
   render() {
     return (
-      <Clock totalSeconds={this.state.count}/>
+      <div>
+        <Clock totalSeconds={this.state.count}/>
+        <CountdownForm />
+      </div>
     );
   }
 }
