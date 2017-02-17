@@ -35,6 +35,11 @@ export class Countdown extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timerID)
+    this.timerID = undefined;
+  }
+
 
   handleSetCountdown =  (seconds) => {
     this.setState({
@@ -47,15 +52,15 @@ export class Countdown extends React.Component {
   tick = () => {
     console.log('tick fireeeed');
     let newMoment = this.state.count - 1;
+    let newState = 'started'
+    if(newMoment === 0) {
+      newState = 'stopped'
+    }
     this.setState(() => {
-      if (newMoment >= 0) {
-        return {count: newMoment}
-      } else {
         return {
-          count: 0,
-          countdownStatus:'stopped'
+          count: newMoment >= 0 ? newMoment : 0,
+          countdownStatus: newState
         }
-      }
     })
   }
 
