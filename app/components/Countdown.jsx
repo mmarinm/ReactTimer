@@ -49,7 +49,7 @@ export class Countdown extends React.Component {
 
   tick = () => {
     const newMoment = this.state.count - 1;
-    const newState = 'started'
+    let newState = 'started'
     if(newMoment === 0) {
       newState = 'stopped'
     }
