@@ -23,6 +23,9 @@ export class Timer extends React.Component {
          break;
         case 'stopped':
           this.setState({count: 0});
+          clearInterval(this.timerID)
+          this.timerID = undefined;
+          break;
         case 'paused':
           clearInterval(this.timerID)
           this.timerID = undefined;
@@ -40,7 +43,7 @@ export class Timer extends React.Component {
   handleStatusChange = (newStatus) => {
     this.setState({
       timerStatus: newStatus,
-    })
+    });
   }
 
   tick = () => {
@@ -49,13 +52,13 @@ export class Timer extends React.Component {
         return {
           count: newMoment >= 0 ? newMoment : 0
         }
-    })
+    });
   }
 
 
 
   render() {
-    const count =  this.state.count
+    const count =  this.state.count;
     return (
       <div>
         <h1 className="page-title">Timer App</h1>

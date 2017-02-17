@@ -24,6 +24,9 @@ export class Countdown extends React.Component {
          break;
         case 'stopped':
           this.setState({count: 0});
+          clearInterval(this.timerID)
+          this.timerID = undefined;
+          break;
         case 'paused':
           clearInterval(this.timerID)
           this.timerID = undefined;
