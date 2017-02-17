@@ -23,10 +23,8 @@ export class Countdown extends React.Component {
           );
          break;
         case 'stopped':
-          console.log('stopped fireeed');
           this.setState({count: 0});
         case 'paused':
-          console.log('paused fireeed');
           clearInterval(this.timerID)
           this.timerID = undefined;
           break;
@@ -50,9 +48,8 @@ export class Countdown extends React.Component {
   }
 
   tick = () => {
-    console.log('tick fireeeed');
-    let newMoment = this.state.count - 1;
-    let newState = 'started'
+    const newMoment = this.state.count - 1;
+    const newState = 'started'
     if(newMoment === 0) {
       newState = 'stopped'
     }
