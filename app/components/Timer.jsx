@@ -7,33 +7,22 @@ export class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
+      countdownStatus: 'stopped'
     }
   }
-  componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
-  }
-
-  componentWillUnmount() {
-   clearInterval(this.timerID);
- }
-
-  tick() {
-    let newMoment = this.state.count +=1;
+  handleSetCountdown = (seconds) => {
     this.setState({
-      count: newMoment
+      count: seconds
     })
   }
 
-
   render() {
+    const count =  this.state.count
     return (
       <div>
-        <Clock totalSeconds={this.state.count}/>
-        <CountdownForm />
+        <Clock totalSeconds={count}/>
+        <CountdownForm onSetCountdown={this.handleSetCountdown}/>
       </div>
     );
   }
