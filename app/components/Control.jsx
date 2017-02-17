@@ -1,18 +1,18 @@
 import React from 'react';
 
 const Controls = (props) => {
-  const  renderStartStopButton = () => {
-    if(props.countdownStatus === 'started') {
+  const  renderStartStopButton = (countdownStatus) => {
+    if(countdownStatus === 'started') {
       return <button className="button secondary" onClick={() => props.onStatusChange('paused')}>Pause</button>
     }
-    else if (props.countdownStatus === 'paused'){
+    else {
       return <button className="button primary" onClick={() => props.onStatusChange('started')}>Start</button>
     }
   }
 
   return (
     <div className="controls">
-      {renderStartStopButton()}
+      {renderStartStopButton(props.countdownStatus)}
       <button className="button alert hollow" onClick={() => props.onStatusChange('stopped')}>Clear</button>
     </div>
   )

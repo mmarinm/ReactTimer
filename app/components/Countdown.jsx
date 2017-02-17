@@ -81,9 +81,9 @@ export class Countdown extends React.Component {
     const count = this.state.count
     return (
       <div>
+        <h1  className='page-title'>Countdown App</h1>
         <Clock totalSeconds={count}/>
         {renderControlArea()}
-        {/* <CountdownForm onSetCountdown={this.handleSetCountdown}/> */}
       </div>
     );
   }
