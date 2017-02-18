@@ -6,8 +6,6 @@ import {Main}  from "Main";
 import {Timer} from "Timer";
 import {Countdown} from "Countdown";
 
-// Load foundation
-require('style!css!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();
 
 //App css
