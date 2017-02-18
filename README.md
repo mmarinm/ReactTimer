@@ -4,6 +4,9 @@ Simple single page React Timer app. Using  React routes for client-side renderin
 
 ## Install locally
   * download the app
+  * run npm Install
+  * run node server.js
+  * run webpack -w
 
 ## Live App
  * [live app](http://reactimerapp.herokuapp.com/)
